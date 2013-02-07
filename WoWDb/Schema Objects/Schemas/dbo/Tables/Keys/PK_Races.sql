@@ -1,0 +1,3 @@
+ALTER TABLE [dbo].[Races]
+	ADD CONSTRAINT [PK_Races]
+	PRIMARY KEY ([RaceId])

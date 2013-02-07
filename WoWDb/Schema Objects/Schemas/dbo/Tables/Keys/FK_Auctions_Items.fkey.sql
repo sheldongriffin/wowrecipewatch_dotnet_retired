@@ -1,0 +1,3 @@
+ALTER TABLE [dbo].[Auctions]
+    ADD CONSTRAINT [FK_Auctions_Items] FOREIGN KEY ([ItemId]) REFERENCES [dbo].[Items] ([ItemId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+

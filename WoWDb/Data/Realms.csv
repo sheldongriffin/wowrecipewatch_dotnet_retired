@@ -1,0 +1,246 @@
+1		low	0	1	Aegwynn	aegwynn	Vengeance
+2		medium	0	1	Aerie Peak	aerie-peak	Nightfall
+3		low	0	1	Agamaggan	agamaggan	Shadowburn
+4		medium	0	1	Aggramar	aggramar	Vindication
+5		medium	0	1	Akama	akama	Vengeance
+6		medium	0	1	Alexstrasza	alexstrasza	Rampage
+7		medium	0	1	Alleria	alleria	Rampage
+8		low	0	1	Altar of Storms	altar-of-storms	Nightfall
+9		medium	0	1	Alterac Mountains	alterac-mountains	Nightfall
+10		medium	0	1	Aman'Thul	amanthul	Bloodlust
+11		low	0	1	Andorhal	andorhal	Stormstrike
+12		low	0	1	Anetheron	anetheron	Stormstrike
+13		medium	0	1	Antonidas	antonidas	Emberstorm
+14		low	0	1	Anub'arak	anubarak	Whirlwind
+15		medium	0	1	Anvilmar	anvilmar	Nightfall
+16		medium	0	1	Arathor	arathor	Reckoning
+17		low	0	1	Archimonde	archimonde	Stormstrike
+18		high	0	1	Area 52	area-52	Retaliation
+19		medium	0	1	Argent Dawn	argent-dawn	Ruin
+20		high	0	1	Arthas	arthas	Ruin
+21		medium	0	1	Arygos	arygos	Nightfall
+22		low	0	1	Auchindoun	auchindoun	Retaliation
+23		medium	0	1	Azgalor	azgalor	Ruin
+24		medium	0	1	Azjol-Nerub	azjolnerub	Cyclone
+25		high	0	1	Azralon	azralon	Shadowburn
+26		low	0	1	Azshara	azshara	Shadowburn
+27		medium	0	1	Azuremyst	azuremyst	Retaliation
+28		medium	0	1	Baelgun	baelgun	Shadowburn
+29		low	0	1	Balnazzar	balnazzar	Rampage
+30		medium	0	1	Barthilas	barthilas	Bloodlust
+31		medium	0	1	Black Dragonflight	black-dragonflight	Stormstrike
+32		medium	0	1	Blackhand	blackhand	Rampage
+33		high	0	1	Blackrock	blackrock	Bloodlust
+34		medium	0	1	Blackwater Raiders	blackwater-raiders	Whirlwind
+35		low	0	1	Blackwing Lair	blackwing-lair	Nightfall
+36		medium	0	1	Blade's Edge	blades-edge	Retaliation
+37		medium	0	1	Bladefist	bladefist	Whirlwind
+38		high	0	1	Bleeding Hollow	bleeding-hollow	Ruin
+39		low	0	1	Blood Furnace	blood-furnace	Retaliation
+40		medium	0	1	Bloodhoof	bloodhoof	Ruin
+41		low	0	1	Bloodscalp	bloodscalp	Cyclone
+42		medium	0	1	Bonechewer	bonechewer	Reckoning
+43		medium	0	1	Borean Tundra	borean-tundra	Emberstorm
+44		medium	0	1	Boulderfist	boulderfist	Cyclone
+45		medium	0	1	Bronzebeard	bronzebeard	Cyclone
+46		medium	0	1	Burning Blade	burning-blade	Vindication
+47		medium	0	1	Burning Legion	burning-legion	Vindication
+48		medium	0	1	Caelestrasz	caelestrasz	Bloodlust
+49		medium	0	1	Cairne	cairne	Emberstorm
+50		medium	0	1	Cenarion Circle	cenarion-circle	Whirlwind
+51		medium	0	1	Cenarius	cenarius	Whirlwind
+52		medium	0	1	Cho'gall	chogall	Rampage
+53		low	0	1	Chromaggus	chromaggus	Vengeance
+54		low	0	1	Coilfang	coilfang	Retaliation
+55		low	0	1	Crushridge	crushridge	Cyclone
+56		low	0	1	Daggerspine	daggerspine	Cyclone
+57		medium	0	1	Dalaran	dalaran	Stormstrike
+58		low	0	1	Dalvengyr	dalvengyr	Stormstrike
+59		medium	0	1	Dark Iron	dark-iron	Shadowburn
+60		high	0	1	Darkspear	darkspear	Cyclone
+61		medium	0	1	Darrowmere	darrowmere	Whirlwind
+62		medium	0	1	Dath'Remar	dathremar	Bloodlust
+63		high	0	1	Dawnbringer	dawnbringer	Retaliation
+64		medium	0	1	Deathwing	deathwing	Nightfall
+65		low	0	1	Demon Soul	demon-soul	Nightfall
+66		medium	0	1	Dentarg	dentarg	Stormstrike
+67		low	0	1	Destromath	destromath	Rampage
+68		low	0	1	Dethecus	dethecus	Rampage
+69		low	0	1	Detheroc	detheroc	Shadowburn
+70		medium	0	1	Doomhammer	doomhammer	Nightfall
+71		high	0	1	Draenor	draenor	Cyclone
+72		medium	0	1	Dragonblight	dragonblight	Cyclone
+73		medium	0	1	Dragonmaw	dragonmaw	Reckoning
+74		low	0	1	Drak'Tharon	draktharon	Emberstorm
+75		high	0	1	Drak'thul	drakthul	Vengeance
+76		medium	0	1	Draka	draka	Vengeance
+77		medium	0	1	Drakkari	drakkari	Vindication
+78		low	0	1	Dreadmaul	dreadmaul	Bloodlust
+79		medium	0	1	Drenden	drenden	Emberstorm
+80		low	0	1	Dunemaul	dunemaul	Cyclone
+81		medium	0	1	Durotan	durotan	Ruin
+82		medium	0	1	Duskwood	duskwood	Stormstrike
+83		medium	0	1	Earthen Ring	earthen-ring	Vindication
+84		medium	0	1	Echo Isles	echo-isles	Whirlwind
+85		medium	0	1	Eitrigg	eitrigg	Vengeance
+86		medium	0	1	Eldre'Thalas	eldrethalas	Reckoning
+87		medium	0	1	Elune	elune	Ruin
+88		high	0	1	Emerald Dream	emerald-dream	Shadowburn
+89		medium	0	1	Eonar	eonar	Vindication
+90		medium	0	1	Eredar	eredar	Vindication
+91		medium	0	1	Executus	executus	Stormstrike
+92		medium	0	1	Exodar	exodar	Retaliation
+93		medium	0	1	Farstriders	farstriders	Emberstorm
+94		medium	0	1	Feathermoon	feathermoon	Cyclone
+95		medium	0	1	Fenris	fenris	Whirlwind
+96		low	0	1	Firetree	firetree	Reckoning
+97		medium	0	1	Fizzcrank	fizzcrank	Retaliation
+98		medium	0	1	Frostmane	frostmane	Reckoning
+99		high	0	1	Frostmourne	frostmourne	Bloodlust
+100		medium	0	1	Frostwolf	frostwolf	Bloodlust
+101		medium	0	1	Galakrond	galakrond	Retaliation
+102		high	0	1	Gallywix	gallywix	Ruin
+103		low	0	1	Garithos	garithos	Vengeance
+104		medium	0	1	Garona	garona	Rampage
+105		medium	0	1	Garrosh	garrosh	Emberstorm
+106		medium	0	1	Ghostlands	ghostlands	Retaliation
+107		medium	0	1	Gilneas	gilneas	Vindication
+108		medium	0	1	Gnomeregan	gnomeregan	Nightfall
+109		high	0	1	Goldrinn	goldrinn	Rampage
+110		low	0	1	Gorefiend	gorefiend	Vindication
+111		low	0	1	Gorgonnash	gorgonnash	Rampage
+112		high	0	1	Greymane	greymane	Shadowburn
+113		medium	0	1	Grizzly Hills	grizzly-hills	Retaliation
+114		low	0	1	Gul'dan	guldan	Rampage
+115		low	0	1	Gundrak	gundrak	Vengeance
+116		low	0	1	Gurubashi	gurubashi	Reckoning
+117		low	0	1	Hakkar	hakkar	Vengeance
+118		low	0	1	Haomarush	haomarush	Stormstrike
+119		medium	0	1	Hellscream	hellscream	Rampage
+120		medium	0	1	Hydraxis	hydraxis	Emberstorm
+121		medium	0	1	Hyjal	hyjal	Whirlwind
+122		medium	0	1	Icecrown	icecrown	Nightfall
+123		high	0	1	Illidan	illidan	Rampage
+124		low	0	1	Jaedenar	jaedenar	Nightfall
+125		medium	0	1	Jubei'Thos	jubeithos	Vengeance
+126		medium	0	1	Kael'thas	kaelthas	Rampage
+127		low	0	1	Kalecgos	kalecgos	Shadowburn
+128		medium	0	1	Kargath	kargath	Vindication
+129		high	0	1	Kel'Thuzad	kelthuzad	Nightfall
+130		medium	0	1	Khadgar	khadgar	Stormstrike
+131		medium	0	1	Khaz Modan	khaz-modan	Vengeance
+132		medium	0	1	Khaz'goroth	khazgoroth	Bloodlust
+133		high	0	1	Kil'jaeden	kiljaeden	Bloodlust
+134		medium	0	1	Kilrogg	kilrogg	Bloodlust
+135		medium	0	1	Kirin Tor	kirin-tor	Rampage
+136		high	0	1	Korgath	korgath	Vengeance
+137		medium	0	1	Korialstrasz	korialstrasz	Whirlwind
+138		medium	0	1	Kul Tiras	kul-tiras	Vengeance
+139		medium	0	1	Laughing Skull	laughing-skull	Vindication
+140		low	0	1	Lethon	lethon	Nightfall
+141		medium	0	1	Lightbringer	lightbringer	Whirlwind
+142		medium	0	1	Lightning's Blade	lightnings-blade	Vindication
+143		medium	0	1	Lightninghoof	lightninghoof	Shadowburn
+144		medium	0	1	Llane	llane	Vindication
+145		high	0	1	Lothar	lothar	Ruin
+146		medium	0	1	Madoran	madoran	Ruin
+147		medium	0	1	Maelstrom	maelstrom	Shadowburn
+148		medium	0	1	Magtheridon	magtheridon	Ruin
+149		low	0	1	Maiev	maiev	Whirlwind
+150		high	0	1	Mal'Ganis	malganis	Stormstrike
+151		medium	0	1	Malfurion	malfurion	Shadowburn
+152		low	0	1	Malorne	malorne	Vengeance
+153		medium	0	1	Malygos	malygos	Vindication
+154		medium	0	1	Mannoroth	mannoroth	Ruin
+155		medium	0	1	Medivh	medivh	Ruin
+156		medium	0	1	Misha	misha	Whirlwind
+157		medium	0	1	Mok'Nathal	moknathal	Emberstorm
+158		high	0	1	Moon Guard	moon-guard	Emberstorm
+159		medium	0	1	Moonrunner	moonrunner	Shadowburn
+160		medium	0	1	Mug'thol	mugthol	Vengeance
+161		medium	0	1	Muradin	muradin	Vengeance
+162		medium	0	1	Nagrand	nagrand	Bloodlust
+163		low	0	1	Nathrezim	nathrezim	Reckoning
+164		medium	0	1	Nazgrel	nazgrel	Emberstorm
+165		low	0	1	Nazjatar	nazjatar	Shadowburn
+166		high	0	1	Nemesis	nemesis	Rampage
+167		medium	0	1	Ner'zhul	nerzhul	Bloodlust
+168		medium	0	1	Nesingwary	nesingwary	Emberstorm
+169		medium	0	1	Nordrassil	nordrassil	Emberstorm
+170		medium	0	1	Norgannon	norgannon	Stormstrike
+171		low	0	1	Onyxia	onyxia	Nightfall
+172		medium	0	1	Perenolde	perenolde	Cyclone
+173		high	0	1	Proudmoore	proudmoore	Bloodlust
+174		high	0	1	Quel'Thalas	quelthalas	Vindication
+175		medium	0	1	Quel'dorei	queldorei	Emberstorm
+176		high	0	1	Ragnaros	ragnaros	Vindication
+177		medium	0	1	Ravencrest	ravencrest	Rampage
+178		medium	0	1	Ravenholdt	ravenholdt	Whirlwind
+179		high	0	1	Rexxar	rexxar	Vengeance
+180		low	0	1	Rivendare	rivendare	Emberstorm
+181		medium	0	1	Runetotem	runetotem	Vengeance
+182		high	0	1	Sargeras	sargeras	Shadowburn
+183		medium	0	1	Saurfang	saurfang	Vengeance
+184		medium	0	1	Scarlet Crusade	scarlet-crusade	Reckoning
+185		low	0	1	Scilla	scilla	Stormstrike
+186		medium	0	1	Sen'jin	senjin	Bloodlust
+187		low	0	1	Sentinels	sentinels	Nightfall
+188		medium	0	1	Shadow Council	shadow-council	Reckoning
+189		medium	0	1	Shadowmoon	shadowmoon	Vindication
+190		medium	0	1	Shadowsong	shadowsong	Reckoning
+191		medium	0	1	Shandris	shandris	Emberstorm
+192		low	0	1	Shattered Halls	shattered-halls	Retaliation
+193		medium	0	1	Shattered Hand	shattered-hand	Ruin
+194		medium	0	1	Shu'halo	shuhalo	Whirlwind
+195		medium	0	1	Silver Hand	silver-hand	Bloodlust
+196		medium	0	1	Silvermoon	silvermoon	Reckoning
+197		medium	0	1	Sisters of Elune	sisters-of-elune	Whirlwind
+198		medium	0	1	Skullcrusher	skullcrusher	Ruin
+199		medium	0	1	Skywall	skywall	Reckoning
+200		low	0	1	Smolderthorn	smolderthorn	Reckoning
+201		low	0	1	Spinebreaker	spinebreaker	Rampage
+202		low	0	1	Spirestone	spirestone	Reckoning
+203		medium	0	1	Staghelm	staghelm	Shadowburn
+204		medium	0	1	Steamwheedle Cartel	steamwheedle-cartel	Stormstrike
+205		low	0	1	Stonemaul	stonemaul	Cyclone
+206		high	0	1	Stormrage	stormrage	Ruin
+207		high	0	1	Stormreaver	stormreaver	Rampage
+208		medium	0	1	Stormscale	stormscale	Cyclone
+209		medium	0	1	Suramar	suramar	Cyclone
+210		medium	0	1	Tanaris	tanaris	Nightfall
+211		medium	0	1	Terenas	terenas	Reckoning
+212		medium	0	1	Terokkar	terokkar	Retaliation
+213		medium	0	1	Thaurissan	thaurissan	Bloodlust
+214		medium	0	1	The Forgotten Coast	the-forgotten-coast	Whirlwind
+215		medium	0	1	The Scryers	the-scryers	Retaliation
+216		low	0	1	The Underbog	the-underbog	Retaliation
+217		low	0	1	The Venture Co	the-venture-co	Nightfall
+218		low	0	1	Thorium Brotherhood	thorium-brotherhood	Vengeance
+219		medium	0	1	Thrall	thrall	Stormstrike
+220		medium	0	1	Thunderhorn	thunderhorn	Vindication
+221		medium	0	1	Thunderlord	thunderlord	Vindication
+222		high	0	1	Tichondrius	tichondrius	Bloodlust
+223		high	0	1	Tol Barad	tol-barad	Shadowburn
+224		low	0	1	Tortheldrin	tortheldrin	Emberstorm
+225		medium	0	1	Trollbane	trollbane	Ruin
+226		medium	0	1	Turalyon	turalyon	Stormstrike
+227		medium	0	1	Twisting Nether	twisting-nether	Shadowburn
+228		medium	0	1	Uldaman	uldaman	Nightfall
+229		medium	0	1	Uldum	uldum	Cyclone
+230		medium	0	1	Undermine	undermine	Nightfall
+231		low	0	1	Ursin	ursin	Shadowburn
+232		medium	0	1	Uther	uther	Whirlwind
+233		high	0	1	Vashj	vashj	Whirlwind
+234		medium	0	1	Vek'nilash	veknilash	Bloodlust
+235		medium	0	1	Velen	velen	Retaliation
+236		low	0	1	Warsong	warsong	Ruin
+237		medium	0	1	Whisperwind	whisperwind	Rampage
+238		medium	0	1	Wildhammer	wildhammer	Shadowburn
+239		medium	0	1	Windrunner	windrunner	Reckoning
+240		medium	0	1	Winterhoof	winterhoof	Whirlwind
+241		high	0	1	Wyrmrest Accord	wyrmrest-accord	Emberstorm
+242		medium	0	1	Ysera	ysera	Stormstrike
+243		low	0	1	Ysondre	ysondre	Stormstrike
+244		medium	0	1	Zangarmarsh	zangarmarsh	Retaliation
+245		high	0	1	Zul'jin	zuljin	Ruin
+246		low	0	1	Zuluhed	zuluhed	Stormstrike
