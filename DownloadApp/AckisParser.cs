@@ -41,7 +41,7 @@ namespace RecipeWatch
                     #region Split File Into AckisRecipe Chunks
 
                     List<string> potentialRecipes = new List<string>();
-                    using (StreamReader r = new StreamReader(@"C:\Users\sheldon.griffin\Downloads\AckisRecipeList\Database\Recipes\" + tradeskills[tradeskillId] + ".lua"))
+                    using (StreamReader r = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\AckisRecipeList\Database\Recipes\" + tradeskills[tradeskillId] + ".lua"))
                     {
                         string line;
                         StringBuilder currentToken = new StringBuilder();
@@ -61,11 +61,6 @@ namespace RecipeWatch
 
                         potentialRecipes.Add(currentToken.ToString());
                     }
-
-                    //for (int i = 0; i < potentialRecipes.Count; i++)
-                    //{
-                    //    File.WriteAllText(@"C:\Users\sheldon.griffin\Downloads\AckisRecipeList\Database\Recipes\" + i + ".lua", potentialRecipes[i]);
-                    //}
 
                     #endregion
 

@@ -13,7 +13,7 @@ namespace DownloadApp
         public static void Parse()
         {
             List<string> potentialRecipes = new List<string>();
-            using (StreamReader r = new StreamReader(@"C:\Users\sheldon.griffin\Downloads\Collectinator\Database\PetDatabase.lua"))
+            using (StreamReader r = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Collectinator\Database\PetDatabase.lua"))
             {
                 string line;
                 StringBuilder currentToken = new StringBuilder();

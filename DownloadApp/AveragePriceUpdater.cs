@@ -15,7 +15,7 @@ namespace DownloadApp
         {
             Dictionary<int, List<long>> averages = new Dictionary<int, List<long>>();
 
-            string allLines = File.ReadAllText(@"C:\Users\sheldon.griffin\Downloads\TheUndermineJournalGE\MarketData.lua");
+            string allLines = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\TheUndermineJournalGE\MarketData.lua");
             foreach (Match match in Regex.Matches(allLines, @"addonTable.marketdata\[(\d+)\] = {\s*\[""marketmedian""\] = (\d+)[^}]+}"))
             {
                 int itemid = Convert.ToInt32(match.Groups[1].Value);
