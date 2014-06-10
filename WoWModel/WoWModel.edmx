@@ -1,79 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WoWModel.WoWDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="WoWModelWoWDbModelStoreContainer">
-          <EntitySet Name="Auctions" EntityType="WoWModel.WoWDbModel.Store.Auctions" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CharacterCompanions" EntityType="WoWModel.WoWDbModel.Store.CharacterCompanions" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CharacterRecipes" EntityType="WoWModel.WoWDbModel.Store.CharacterRecipes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Characters" EntityType="WoWModel.WoWDbModel.Store.Characters" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CharacterTradeskills" EntityType="WoWModel.WoWDbModel.Store.CharacterTradeskills" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Classes" EntityType="WoWModel.WoWDbModel.Store.Classes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Companions" EntityType="WoWModel.WoWDbModel.Store.Companions" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Items" EntityType="WoWModel.WoWDbModel.Store.Items" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Races" EntityType="WoWModel.WoWDbModel.Store.Races" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Reagents" EntityType="WoWModel.WoWDbModel.Store.Reagents" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Realms" EntityType="WoWModel.WoWDbModel.Store.Realms" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Recipes" EntityType="WoWModel.WoWDbModel.Store.Recipes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Tradeskills" EntityType="WoWModel.WoWDbModel.Store.Tradeskills" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_Auctions_Items" Association="WoWModel.WoWDbModel.Store.FK_Auctions_Items">
-            <End Role="Items" EntitySet="Items" />
-            <End Role="Auctions" EntitySet="Auctions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Auctions_Realms" Association="WoWModel.WoWDbModel.Store.FK_Auctions_Realms">
-            <End Role="Realms" EntitySet="Realms" />
-            <End Role="Auctions" EntitySet="Auctions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CharacterCompanions_Characters" Association="WoWModel.WoWDbModel.Store.FK_CharacterCompanions_Characters">
-            <End Role="Characters" EntitySet="Characters" />
-            <End Role="CharacterCompanions" EntitySet="CharacterCompanions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CharacterCompanions_Companions" Association="WoWModel.WoWDbModel.Store.FK_CharacterCompanions_Companions">
-            <End Role="Companions" EntitySet="Companions" />
-            <End Role="CharacterCompanions" EntitySet="CharacterCompanions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CharacterRecipes_Characters" Association="WoWModel.WoWDbModel.Store.FK_CharacterRecipes_Characters">
-            <End Role="Characters" EntitySet="Characters" />
-            <End Role="CharacterRecipes" EntitySet="CharacterRecipes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CharacterRecipes_Recipes" Association="WoWModel.WoWDbModel.Store.FK_CharacterRecipes_Recipes">
-            <End Role="Recipes" EntitySet="Recipes" />
-            <End Role="CharacterRecipes" EntitySet="CharacterRecipes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Characters_Classes" Association="WoWModel.WoWDbModel.Store.FK_Characters_Classes">
-            <End Role="Classes" EntitySet="Classes" />
-            <End Role="Characters" EntitySet="Characters" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Characters_Races" Association="WoWModel.WoWDbModel.Store.FK_Characters_Races">
-            <End Role="Races" EntitySet="Races" />
-            <End Role="Characters" EntitySet="Characters" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Characters_Realms" Association="WoWModel.WoWDbModel.Store.FK_Characters_Realms">
-            <End Role="Realms" EntitySet="Realms" />
-            <End Role="Characters" EntitySet="Characters" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CharacterTradeskills_Character" Association="WoWModel.WoWDbModel.Store.FK_CharacterTradeskills_Character">
-            <End Role="Characters" EntitySet="Characters" />
-            <End Role="CharacterTradeskills" EntitySet="CharacterTradeskills" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="WoWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Auctions">
           <Key>
             <PropertyRef Name="RealmId" />
             <PropertyRef Name="AuctionId" />
           </Key>
           <Property Name="RealmId" Type="int" Nullable="false" />
-          <Property Name="Faction" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Faction" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="AuctionId" Type="bigint" Nullable="false" />
           <Property Name="ItemId" Type="int" Nullable="false" />
-          <Property Name="Owner" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Owner" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Bid" Type="bigint" />
           <Property Name="Buyout" Type="bigint" />
           <Property Name="Quantity" Type="bigint" Nullable="false" />
-          <Property Name="TimeLeft" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TimeLeft" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LastModified" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="CharacterCompanions">
@@ -96,7 +41,7 @@
           <Key>
             <PropertyRef Name="CharacterId" />
           </Key>
-          <Property Name="CharacterId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CharacterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LastModified" Type="bigint" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="RealmId" Type="int" Nullable="false" />
@@ -120,8 +65,8 @@
             <PropertyRef Name="ClassId" />
           </Key>
           <Property Name="ClassId" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Icon" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="R" Type="tinyint" Nullable="false" />
           <Property Name="G" Type="tinyint" Nullable="false" />
           <Property Name="B" Type="tinyint" Nullable="false" />
@@ -131,17 +76,16 @@
             <PropertyRef Name="CompanionId" />
           </Key>
           <Property Name="CompanionId" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Items">
           <Key>
             <PropertyRef Name="ItemId" />
           </Key>
           <Property Name="ItemId" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="JSON" Type="nvarchar(max)" />
           <Property Name="JSON_zhTW" Type="nvarchar(max)" />
-          <Property Name="RecipeId" Type="int" />
           <Property Name="CompanionId" Type="int" />
           <Property Name="ServerwideAverage" Type="bigint" />
           <Property Name="Quality" Type="int" />
@@ -155,30 +99,33 @@
             <PropertyRef Name="RaceId" />
           </Key>
           <Property Name="RaceId" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Icon" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WoWDB.dbo.Reagents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Reagents">
           <Key>
             <PropertyRef Name="RecipeId" />
             <PropertyRef Name="ItemId" />
+            <PropertyRef Name="Quantity" />
           </Key>
           <Property Name="RecipeId" Type="int" Nullable="false" />
           <Property Name="ItemId" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="int" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Realms">
           <Key>
             <PropertyRef Name="RealmId" />
           </Key>
-          <Property Name="RealmId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RealmId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="50" />
-          <Property Name="Population" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Population" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Queue" Type="bit" Nullable="false" />
           <Property Name="Status" Type="bit" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Slug" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Battlegroup" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Slug" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Battlegroup" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Recipes">
           <Key>
@@ -186,24 +133,26 @@
           </Key>
           <Property Name="RecipeId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="200" />
-          <Property Name="ItemId" Type="int" />
+          <Property Name="RecipeItemId" Type="int" />
+          <Property Name="CraftedItemId" Type="int" />
           <Property Name="TradeskillId" Type="int" Nullable="false" />
           <Property Name="Source" Type="nvarchar(max)" />
           <Property Name="ServerwideAverage" Type="bigint" />
           <Property Name="CurrentPrice" Type="bigint" />
+          <Property Name="SkillLevel" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Tradeskills">
           <Key>
             <PropertyRef Name="TradeskillId" />
           </Key>
           <Property Name="TradeskillId" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Primary" Type="bit" Nullable="false" />
-          <Property Name="Icon" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Auctions_Items">
-          <End Role="Items" Type="WoWModel.WoWDbModel.Store.Items" Multiplicity="1" />
-          <End Role="Auctions" Type="WoWModel.WoWDbModel.Store.Auctions" Multiplicity="*" />
+          <End Role="Items" Type="Self.Items" Multiplicity="1" />
+          <End Role="Auctions" Type="Self.Auctions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Items">
               <PropertyRef Name="ItemId" />
@@ -214,8 +163,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Auctions_Realms">
-          <End Role="Realms" Type="WoWModel.WoWDbModel.Store.Realms" Multiplicity="1" />
-          <End Role="Auctions" Type="WoWModel.WoWDbModel.Store.Auctions" Multiplicity="*" />
+          <End Role="Realms" Type="Self.Realms" Multiplicity="1" />
+          <End Role="Auctions" Type="Self.Auctions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Realms">
               <PropertyRef Name="RealmId" />
@@ -226,8 +175,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CharacterCompanions_Characters">
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Store.Characters" Multiplicity="1" />
-          <End Role="CharacterCompanions" Type="WoWModel.WoWDbModel.Store.CharacterCompanions" Multiplicity="*" />
+          <End Role="Characters" Type="Self.Characters" Multiplicity="1" />
+          <End Role="CharacterCompanions" Type="Self.CharacterCompanions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Characters">
               <PropertyRef Name="CharacterId" />
@@ -238,8 +187,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CharacterCompanions_Companions">
-          <End Role="Companions" Type="WoWModel.WoWDbModel.Store.Companions" Multiplicity="1" />
-          <End Role="CharacterCompanions" Type="WoWModel.WoWDbModel.Store.CharacterCompanions" Multiplicity="*" />
+          <End Role="Companions" Type="Self.Companions" Multiplicity="1" />
+          <End Role="CharacterCompanions" Type="Self.CharacterCompanions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Companions">
               <PropertyRef Name="CompanionId" />
@@ -250,8 +199,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CharacterRecipes_Characters">
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Store.Characters" Multiplicity="1" />
-          <End Role="CharacterRecipes" Type="WoWModel.WoWDbModel.Store.CharacterRecipes" Multiplicity="*" />
+          <End Role="Characters" Type="Self.Characters" Multiplicity="1" />
+          <End Role="CharacterRecipes" Type="Self.CharacterRecipes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Characters">
               <PropertyRef Name="CharacterId" />
@@ -262,8 +211,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CharacterRecipes_Recipes">
-          <End Role="Recipes" Type="WoWModel.WoWDbModel.Store.Recipes" Multiplicity="1" />
-          <End Role="CharacterRecipes" Type="WoWModel.WoWDbModel.Store.CharacterRecipes" Multiplicity="*" />
+          <End Role="Recipes" Type="Self.Recipes" Multiplicity="1" />
+          <End Role="CharacterRecipes" Type="Self.CharacterRecipes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Recipes">
               <PropertyRef Name="RecipeId" />
@@ -274,8 +223,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Characters_Classes">
-          <End Role="Classes" Type="WoWModel.WoWDbModel.Store.Classes" Multiplicity="1" />
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Store.Characters" Multiplicity="*" />
+          <End Role="Classes" Type="Self.Classes" Multiplicity="1" />
+          <End Role="Characters" Type="Self.Characters" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Classes">
               <PropertyRef Name="ClassId" />
@@ -286,8 +235,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Characters_Races">
-          <End Role="Races" Type="WoWModel.WoWDbModel.Store.Races" Multiplicity="1" />
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Store.Characters" Multiplicity="*" />
+          <End Role="Races" Type="Self.Races" Multiplicity="1" />
+          <End Role="Characters" Type="Self.Characters" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Races">
               <PropertyRef Name="RaceId" />
@@ -298,8 +247,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Characters_Realms">
-          <End Role="Realms" Type="WoWModel.WoWDbModel.Store.Realms" Multiplicity="1" />
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Store.Characters" Multiplicity="*" />
+          <End Role="Realms" Type="Self.Realms" Multiplicity="1" />
+          <End Role="Characters" Type="Self.Characters" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Realms">
               <PropertyRef Name="RealmId" />
@@ -309,9 +258,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CharacterTradeskills_Character">
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Store.Characters" Multiplicity="1" />
-          <End Role="CharacterTradeskills" Type="WoWModel.WoWDbModel.Store.CharacterTradeskills" Multiplicity="*" />
+        <Association Name="FK_CharacterTradeskills_Characters">
+          <End Role="Characters" Type="Self.Characters" Multiplicity="1" />
+          <End Role="CharacterTradeskills" Type="Self.CharacterTradeskills" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Characters">
               <PropertyRef Name="CharacterId" />
@@ -321,95 +270,201 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
-    <!-- CSDL content -->
-    <edmx:ConceptualModels>
-      <Schema Namespace="WoWModel.WoWDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="WoWEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Auctions" EntityType="WoWModel.WoWDbModel.Auction" />
-          <EntitySet Name="Characters" EntityType="WoWModel.WoWDbModel.Character" />
-          <EntitySet Name="Classes" EntityType="WoWModel.WoWDbModel.Class" />
-          <EntitySet Name="Companions" EntityType="WoWModel.WoWDbModel.Companion" />
-          <EntitySet Name="Items" EntityType="WoWModel.WoWDbModel.Item" />
-          <EntitySet Name="Races" EntityType="WoWModel.WoWDbModel.Race" />
-          <EntitySet Name="Reagents" EntityType="WoWModel.WoWDbModel.Reagent" />
-          <EntitySet Name="Realms" EntityType="WoWModel.WoWDbModel.Realm" />
-          <EntitySet Name="Recipes" EntityType="WoWModel.WoWDbModel.Recipe" />
-          <EntitySet Name="Tradeskills" EntityType="WoWModel.WoWDbModel.Tradeskill" />
-          <AssociationSet Name="FK_Auctions_Items" Association="WoWModel.WoWDbModel.FK_Auctions_Items">
+        <Association Name="FK_CharacterTradeskills_Tradeskills">
+          <End Role="Tradeskills" Type="Self.Tradeskills" Multiplicity="1" />
+          <End Role="CharacterTradeskills" Type="Self.CharacterTradeskills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tradeskills">
+              <PropertyRef Name="TradeskillId" />
+            </Principal>
+            <Dependent Role="CharacterTradeskills">
+              <PropertyRef Name="TradeskillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Companions">
+          <End Role="Companions" Type="Self.Companions" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companions">
+              <PropertyRef Name="CompanionId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="CompanionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reagents_Items">
+          <End Role="Items" Type="Self.Items" Multiplicity="1" />
+          <End Role="Reagents" Type="Self.Reagents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="Reagents">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reagents_Recipes">
+          <End Role="Recipes" Type="Self.Recipes" Multiplicity="1" />
+          <End Role="Reagents" Type="Self.Reagents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipes">
+              <PropertyRef Name="RecipeId" />
+            </Principal>
+            <Dependent Role="Reagents">
+              <PropertyRef Name="RecipeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recipes_CraftedItems">
+          <End Role="Items" Type="Self.Items" Multiplicity="0..1" />
+          <End Role="Recipes" Type="Self.Recipes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="Recipes">
+              <PropertyRef Name="CraftedItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recipes_RecipeItems">
+          <End Role="Items" Type="Self.Items" Multiplicity="0..1" />
+          <End Role="Recipes" Type="Self.Recipes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="Recipes">
+              <PropertyRef Name="RecipeItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recipes_Tradeskills">
+          <End Role="Tradeskills" Type="Self.Tradeskills" Multiplicity="1" />
+          <End Role="Recipes" Type="Self.Recipes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tradeskills">
+              <PropertyRef Name="TradeskillId" />
+            </Principal>
+            <Dependent Role="Recipes">
+              <PropertyRef Name="TradeskillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WoWModelStoreContainer">
+          <EntitySet Name="Auctions" EntityType="Self.Auctions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterCompanions" EntityType="Self.CharacterCompanions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterRecipes" EntityType="Self.CharacterRecipes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Characters" EntityType="Self.Characters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterTradeskills" EntityType="Self.CharacterTradeskills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classes" EntityType="Self.Classes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Companions" EntityType="Self.Companions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Races" EntityType="Self.Races" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Realms" EntityType="Self.Realms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recipes" EntityType="Self.Recipes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tradeskills" EntityType="Self.Tradeskills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reagents" EntityType="Self.Reagents" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Reagents].[RecipeId] AS [RecipeId], 
+    [Reagents].[ItemId] AS [ItemId], 
+    [Reagents].[Quantity] AS [Quantity]
+    FROM [dbo].[Reagents] AS [Reagents]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Auctions_Items" Association="Self.FK_Auctions_Items">
             <End Role="Items" EntitySet="Items" />
             <End Role="Auctions" EntitySet="Auctions" />
           </AssociationSet>
-          <AssociationSet Name="FK_Auctions_Realms" Association="WoWModel.WoWDbModel.FK_Auctions_Realms">
+          <AssociationSet Name="FK_Auctions_Realms" Association="Self.FK_Auctions_Realms">
             <End Role="Realms" EntitySet="Realms" />
             <End Role="Auctions" EntitySet="Auctions" />
           </AssociationSet>
-          <AssociationSet Name="FK_Characters_Classes" Association="WoWModel.WoWDbModel.FK_Characters_Classes">
+          <AssociationSet Name="FK_CharacterCompanions_Characters" Association="Self.FK_CharacterCompanions_Characters">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="CharacterCompanions" EntitySet="CharacterCompanions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterCompanions_Companions" Association="Self.FK_CharacterCompanions_Companions">
+            <End Role="Companions" EntitySet="Companions" />
+            <End Role="CharacterCompanions" EntitySet="CharacterCompanions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterRecipes_Characters" Association="Self.FK_CharacterRecipes_Characters">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="CharacterRecipes" EntitySet="CharacterRecipes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterRecipes_Recipes" Association="Self.FK_CharacterRecipes_Recipes">
+            <End Role="Recipes" EntitySet="Recipes" />
+            <End Role="CharacterRecipes" EntitySet="CharacterRecipes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Characters_Classes" Association="Self.FK_Characters_Classes">
             <End Role="Classes" EntitySet="Classes" />
             <End Role="Characters" EntitySet="Characters" />
           </AssociationSet>
-          <AssociationSet Name="FK_Characters_Races" Association="WoWModel.WoWDbModel.FK_Characters_Races">
+          <AssociationSet Name="FK_Characters_Races" Association="Self.FK_Characters_Races">
             <End Role="Races" EntitySet="Races" />
             <End Role="Characters" EntitySet="Characters" />
           </AssociationSet>
-          <AssociationSet Name="FK_Characters_Realms" Association="WoWModel.WoWDbModel.FK_Characters_Realms">
+          <AssociationSet Name="FK_Characters_Realms" Association="Self.FK_Characters_Realms">
             <End Role="Realms" EntitySet="Realms" />
             <End Role="Characters" EntitySet="Characters" />
           </AssociationSet>
-          <AssociationSet Name="FK_Items_Companions" Association="WoWModel.WoWDbModel.FK_Items_Companions">
+          <AssociationSet Name="FK_CharacterTradeskills_Characters" Association="Self.FK_CharacterTradeskills_Characters">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="CharacterTradeskills" EntitySet="CharacterTradeskills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterTradeskills_Tradeskills" Association="Self.FK_CharacterTradeskills_Tradeskills">
+            <End Role="Tradeskills" EntitySet="Tradeskills" />
+            <End Role="CharacterTradeskills" EntitySet="CharacterTradeskills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Companions" Association="Self.FK_Items_Companions">
             <End Role="Companions" EntitySet="Companions" />
             <End Role="Items" EntitySet="Items" />
           </AssociationSet>
-          <AssociationSet Name="FK_Items_Recipes" Association="WoWModel.WoWDbModel.FK_Items_Recipes">
-            <End Role="Recipes" EntitySet="Recipes" />
-            <End Role="Items" EntitySet="Items" />
-          </AssociationSet>
-          <AssociationSet Name="FK_recipereagelnts_Items" Association="WoWModel.WoWDbModel.FK_recipereagelnts_Items">
+          <AssociationSet Name="FK_Reagents_Items" Association="Self.FK_Reagents_Items">
             <End Role="Items" EntitySet="Items" />
             <End Role="Reagents" EntitySet="Reagents" />
           </AssociationSet>
-          <AssociationSet Name="FK_Recipes_Items" Association="WoWModel.WoWDbModel.FK_Recipes_Items">
-            <End Role="Items" EntitySet="Items" />
-            <End Role="Recipes" EntitySet="Recipes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_recipereagelnts_Recipes" Association="WoWModel.WoWDbModel.FK_recipereagelnts_Recipes">
+          <AssociationSet Name="FK_Reagents_Recipes" Association="Self.FK_Reagents_Recipes">
             <End Role="Recipes" EntitySet="Recipes" />
             <End Role="Reagents" EntitySet="Reagents" />
           </AssociationSet>
-          <AssociationSet Name="FK_Recipes_Tradeskills" Association="WoWModel.WoWDbModel.FK_Recipes_Tradeskills">
+          <AssociationSet Name="FK_Recipes_CraftedItems" Association="Self.FK_Recipes_CraftedItems">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="Recipes" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recipes_RecipeItems" Association="Self.FK_Recipes_RecipeItems">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="Recipes" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recipes_Tradeskills" Association="Self.FK_Recipes_Tradeskills">
             <End Role="Tradeskills" EntitySet="Tradeskills" />
             <End Role="Recipes" EntitySet="Recipes" />
           </AssociationSet>
-          <AssociationSet Name="CharacterCompanions" Association="WoWModel.WoWDbModel.CharacterCompanions">
-            <End Role="Characters" EntitySet="Characters" />
-            <End Role="Companions" EntitySet="Companions" />
-          </AssociationSet>
-          <AssociationSet Name="CharacterRecipes" Association="WoWModel.WoWDbModel.CharacterRecipes">
-            <End Role="Characters" EntitySet="Characters" />
-            <End Role="Recipes" EntitySet="Recipes" />
-          </AssociationSet>
-          <AssociationSet Name="CharacterTradeskills" Association="WoWModel.WoWDbModel.CharacterTradeskills">
-            <End Role="Character" EntitySet="Characters" />
-            <End Role="Tradeskill" EntitySet="Tradeskills" />
-          </AssociationSet>
         </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WoWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Auction">
           <Key>
             <PropertyRef Name="RealmId" />
             <PropertyRef Name="AuctionId" />
           </Key>
           <Property Name="RealmId" Type="Int32" Nullable="false" />
-          <Property Name="Faction" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Faction" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AuctionId" Type="Int64" Nullable="false" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
-          <Property Name="Owner" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Owner" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Bid" Type="Int64" />
           <Property Name="Buyout" Type="Int64" />
           <Property Name="Quantity" Type="Int64" Nullable="false" />
-          <Property Name="TimeLeft" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TimeLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LastModified" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Item" Relationship="WoWModel.WoWDbModel.FK_Auctions_Items" FromRole="Auctions" ToRole="Items" />
-          <NavigationProperty Name="Realm" Relationship="WoWModel.WoWDbModel.FK_Auctions_Realms" FromRole="Auctions" ToRole="Realms" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_Auctions_Items" FromRole="Auctions" ToRole="Items" />
+          <NavigationProperty Name="Realm" Relationship="Self.FK_Auctions_Realms" FromRole="Auctions" ToRole="Realms" />
         </EntityType>
         <EntityType Name="Character">
           <Key>
@@ -417,130 +472,132 @@
           </Key>
           <Property Name="CharacterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LastModified" Type="Int64" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RealmId" Type="Int32" Nullable="false" />
           <Property Name="RaceId" Type="Int32" Nullable="false" />
           <Property Name="ClassId" Type="Int32" Nullable="false" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
           <Property Name="Level" Type="Int32" Nullable="false" />
           <Property Name="AchievementPoints" Type="Int32" Nullable="false" />
-          <Property Name="Thumbnail" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Class" Relationship="WoWModel.WoWDbModel.FK_Characters_Classes" FromRole="Characters" ToRole="Classes" />
-          <NavigationProperty Name="Race" Relationship="WoWModel.WoWDbModel.FK_Characters_Races" FromRole="Characters" ToRole="Races" />
-          <NavigationProperty Name="Realm" Relationship="WoWModel.WoWDbModel.FK_Characters_Realms" FromRole="Characters" ToRole="Realms" />
-          <NavigationProperty Name="Companions" Relationship="WoWModel.WoWDbModel.CharacterCompanions" FromRole="Characters" ToRole="Companions" />
-          <NavigationProperty Name="Recipes" Relationship="WoWModel.WoWDbModel.CharacterRecipes" FromRole="Characters" ToRole="Recipes" />
-          <NavigationProperty Name="Tradeskills" Relationship="WoWModel.WoWDbModel.CharacterTradeskills" FromRole="Character" ToRole="Tradeskill" />
+          <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Class" Relationship="Self.FK_Characters_Classes" FromRole="Characters" ToRole="Classes" />
+          <NavigationProperty Name="Race" Relationship="Self.FK_Characters_Races" FromRole="Characters" ToRole="Races" />
+          <NavigationProperty Name="Realm" Relationship="Self.FK_Characters_Realms" FromRole="Characters" ToRole="Realms" />
+          <NavigationProperty Name="Companions" Relationship="Self.CharacterCompanions" FromRole="Characters" ToRole="Companions" />
+          <NavigationProperty Name="Recipes" Relationship="Self.CharacterRecipes" FromRole="Characters" ToRole="Recipes" />
+          <NavigationProperty Name="Tradeskills" Relationship="Self.CharacterTradeskills" FromRole="Characters" ToRole="Tradeskills" />
         </EntityType>
         <EntityType Name="Class">
           <Key>
             <PropertyRef Name="ClassId" />
           </Key>
           <Property Name="ClassId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Icon" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="R" Type="Byte" Nullable="false" />
           <Property Name="G" Type="Byte" Nullable="false" />
           <Property Name="B" Type="Byte" Nullable="false" />
-          <NavigationProperty Name="Characters" Relationship="WoWModel.WoWDbModel.FK_Characters_Classes" FromRole="Classes" ToRole="Characters" />
+          <NavigationProperty Name="Characters" Relationship="Self.FK_Characters_Classes" FromRole="Classes" ToRole="Characters" />
         </EntityType>
         <EntityType Name="Companion">
           <Key>
             <PropertyRef Name="CompanionId" />
           </Key>
           <Property Name="CompanionId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="TaughtBy" Relationship="WoWModel.WoWDbModel.FK_Items_Companions" FromRole="Companions" ToRole="Items" />
-          <NavigationProperty Name="KnownBy" Relationship="WoWModel.WoWDbModel.CharacterCompanions" FromRole="Companions" ToRole="Characters" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Items" Relationship="Self.FK_Items_Companions" FromRole="Companions" ToRole="Items" />
+          <NavigationProperty Name="Characters" Relationship="Self.CharacterCompanions" FromRole="Companions" ToRole="Characters" />
         </EntityType>
         <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ItemId" />
           </Key>
           <Property Name="ItemId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="JSON" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="JSON_zhTW" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="RecipeId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JSON_zhTW" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CompanionId" Type="Int32" />
           <Property Name="ServerwideAverage" Type="Int64" />
           <Property Name="Quality" Type="Int32" />
           <Property Name="BindOnPickup" Type="Int32" />
           <Property Name="SourceId" Type="Int32" />
-          <Property Name="SourceType" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Icon" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Auctions" Relationship="WoWModel.WoWDbModel.FK_Auctions_Items" FromRole="Items" ToRole="Auctions" />
-          <NavigationProperty Name="CompanionTaught" Relationship="WoWModel.WoWDbModel.FK_Items_Companions" FromRole="Items" ToRole="Companions" />
-          <NavigationProperty Name="RecipeTaught" Relationship="WoWModel.WoWDbModel.FK_Items_Recipes" FromRole="Items" ToRole="Recipes" />
-          <NavigationProperty Name="Reagents" Relationship="WoWModel.WoWDbModel.FK_recipereagelnts_Items" FromRole="Items" ToRole="Reagents" />
-          <NavigationProperty Name="CraftedBy" Relationship="WoWModel.WoWDbModel.FK_Recipes_Items" FromRole="Items" ToRole="Recipes" />
+          <Property Name="SourceType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Auctions" Relationship="Self.FK_Auctions_Items" FromRole="Items" ToRole="Auctions" />
+          <NavigationProperty Name="Companion" Relationship="Self.FK_Items_Companions" FromRole="Items" ToRole="Companions" />
+          <NavigationProperty Name="Reagents" Relationship="Self.FK_Reagents_Items" FromRole="Items" ToRole="Reagents" />
+          <NavigationProperty Name="Recipes" Relationship="Self.FK_Recipes_CraftedItems" FromRole="Items" ToRole="Recipes" />
+          <NavigationProperty Name="Recipes1" Relationship="Self.FK_Recipes_RecipeItems" FromRole="Items" ToRole="Recipes" />
         </EntityType>
         <EntityType Name="Race">
           <Key>
             <PropertyRef Name="RaceId" />
           </Key>
           <Property Name="RaceId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Icon" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Characters" Relationship="WoWModel.WoWDbModel.FK_Characters_Races" FromRole="Races" ToRole="Characters" />
-        </EntityType>
-        <EntityType Name="Reagent">
-          <Key>
-            <PropertyRef Name="RecipeId" />
-            <PropertyRef Name="ItemId" />
-          </Key>
-          <Property Name="RecipeId" Type="Int32" Nullable="false" />
-          <Property Name="ItemId" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" />
-          <NavigationProperty Name="Item" Relationship="WoWModel.WoWDbModel.FK_recipereagelnts_Items" FromRole="Reagents" ToRole="Items" />
-          <NavigationProperty Name="Recipe" Relationship="WoWModel.WoWDbModel.FK_recipereagelnts_Recipes" FromRole="Reagents" ToRole="Recipes" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Icon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Characters" Relationship="Self.FK_Characters_Races" FromRole="Races" ToRole="Characters" />
         </EntityType>
         <EntityType Name="Realm">
           <Key>
             <PropertyRef Name="RealmId" />
           </Key>
           <Property Name="RealmId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Population" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Population" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Queue" Type="Boolean" Nullable="false" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Slug" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="Battlegroup" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Auctions" Relationship="WoWModel.WoWDbModel.FK_Auctions_Realms" FromRole="Realms" ToRole="Auctions" />
-          <NavigationProperty Name="Characters" Relationship="WoWModel.WoWDbModel.FK_Characters_Realms" FromRole="Realms" ToRole="Characters" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slug" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Battlegroup" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Auctions" Relationship="Self.FK_Auctions_Realms" FromRole="Realms" ToRole="Auctions" />
+          <NavigationProperty Name="Characters" Relationship="Self.FK_Characters_Realms" FromRole="Realms" ToRole="Characters" />
         </EntityType>
         <EntityType Name="Recipe">
           <Key>
             <PropertyRef Name="RecipeId" />
           </Key>
           <Property Name="RecipeId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="ItemId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RecipeItemId" Type="Int32" />
+          <Property Name="CraftedItemId" Type="Int32" />
           <Property Name="TradeskillId" Type="Int32" Nullable="false" />
-          <Property Name="Source" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ServerwideAverage" Type="Int64" />
-          <NavigationProperty Name="LearnedBy" Relationship="WoWModel.WoWDbModel.FK_Items_Recipes" FromRole="Recipes" ToRole="Items" />
-          <NavigationProperty Name="CraftedItem" Relationship="WoWModel.WoWDbModel.FK_Recipes_Items" FromRole="Recipes" ToRole="Items" />
-          <NavigationProperty Name="Reagents" Relationship="WoWModel.WoWDbModel.FK_recipereagelnts_Recipes" FromRole="Recipes" ToRole="Reagents" />
-          <NavigationProperty Name="Tradeskill" Relationship="WoWModel.WoWDbModel.FK_Recipes_Tradeskills" FromRole="Recipes" ToRole="Tradeskills" />
-          <NavigationProperty Name="Characters" Relationship="WoWModel.WoWDbModel.CharacterRecipes" FromRole="Recipes" ToRole="Characters" />
-          <Property Type="Int64" Name="CurrentPrice" />
+          <Property Name="CurrentPrice" Type="Int64" />
+          <Property Name="SkillLevel" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_Recipes_CraftedItems" FromRole="Recipes" ToRole="Items" />
+          <NavigationProperty Name="Item1" Relationship="Self.FK_Recipes_RecipeItems" FromRole="Recipes" ToRole="Items" />
+          <NavigationProperty Name="Reagents" Relationship="Self.FK_Reagents_Recipes" FromRole="Recipes" ToRole="Reagents" />
+          <NavigationProperty Name="Tradeskill" Relationship="Self.FK_Recipes_Tradeskills" FromRole="Recipes" ToRole="Tradeskills" />
+          <NavigationProperty Name="Characters" Relationship="Self.CharacterRecipes" FromRole="Recipes" ToRole="Characters" />
         </EntityType>
         <EntityType Name="Tradeskill">
           <Key>
             <PropertyRef Name="TradeskillId" />
           </Key>
           <Property Name="TradeskillId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Primary" Type="Boolean" Nullable="false" />
-          <Property Name="Icon" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Recipes" Relationship="WoWModel.WoWDbModel.FK_Recipes_Tradeskills" FromRole="Tradeskills" ToRole="Recipes" />
-          <NavigationProperty Name="Characters" Relationship="WoWModel.WoWDbModel.CharacterTradeskills" FromRole="Tradeskill" ToRole="Character" />
+          <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Recipes" Relationship="Self.FK_Recipes_Tradeskills" FromRole="Tradeskills" ToRole="Recipes" />
+          <NavigationProperty Name="Characters" Relationship="Self.CharacterTradeskills" FromRole="Tradeskills" ToRole="Characters" />
+        </EntityType>
+        <EntityType Name="Reagent">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="Quantity" />
+          </Key>
+          <Property Name="RecipeId" Type="Int32" Nullable="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_Reagents_Items" FromRole="Reagents" ToRole="Items" />
+          <NavigationProperty Name="Recipe" Relationship="Self.FK_Reagents_Recipes" FromRole="Reagents" ToRole="Recipes" />
         </EntityType>
         <Association Name="FK_Auctions_Items">
-          <End Role="Items" Type="WoWModel.WoWDbModel.Item" Multiplicity="1" />
-          <End Role="Auctions" Type="WoWModel.WoWDbModel.Auction" Multiplicity="*" />
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="Auctions" Type="Self.Auction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Items">
               <PropertyRef Name="ItemId" />
@@ -551,8 +608,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Auctions_Realms">
-          <End Role="Realms" Type="WoWModel.WoWDbModel.Realm" Multiplicity="1" />
-          <End Role="Auctions" Type="WoWModel.WoWDbModel.Auction" Multiplicity="*" />
+          <End Role="Realms" Type="Self.Realm" Multiplicity="1" />
+          <End Role="Auctions" Type="Self.Auction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Realms">
               <PropertyRef Name="RealmId" />
@@ -563,8 +620,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Characters_Classes">
-          <End Role="Classes" Type="WoWModel.WoWDbModel.Class" Multiplicity="1" />
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Character" Multiplicity="*" />
+          <End Role="Classes" Type="Self.Class" Multiplicity="1" />
+          <End Role="Characters" Type="Self.Character" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Classes">
               <PropertyRef Name="ClassId" />
@@ -575,8 +632,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Characters_Races">
-          <End Role="Races" Type="WoWModel.WoWDbModel.Race" Multiplicity="1" />
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Character" Multiplicity="*" />
+          <End Role="Races" Type="Self.Race" Multiplicity="1" />
+          <End Role="Characters" Type="Self.Character" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Races">
               <PropertyRef Name="RaceId" />
@@ -587,8 +644,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Characters_Realms">
-          <End Role="Realms" Type="WoWModel.WoWDbModel.Realm" Multiplicity="1" />
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Character" Multiplicity="*" />
+          <End Role="Realms" Type="Self.Realm" Multiplicity="1" />
+          <End Role="Characters" Type="Self.Character" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Realms">
               <PropertyRef Name="RealmId" />
@@ -599,8 +656,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Items_Companions">
-          <End Role="Companions" Type="WoWModel.WoWDbModel.Companion" Multiplicity="0..1" />
-          <End Role="Items" Type="WoWModel.WoWDbModel.Item" Multiplicity="*" />
+          <End Role="Companions" Type="Self.Companion" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Companions">
               <PropertyRef Name="CompanionId" />
@@ -610,21 +667,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Items_Recipes">
-          <End Role="Recipes" Type="WoWModel.WoWDbModel.Recipe" Multiplicity="0..1" />
-          <End Role="Items" Type="WoWModel.WoWDbModel.Item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Recipes">
-              <PropertyRef Name="RecipeId" />
-            </Principal>
-            <Dependent Role="Items">
-              <PropertyRef Name="RecipeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_recipereagelnts_Items">
-          <End Role="Items" Type="WoWModel.WoWDbModel.Item" Multiplicity="1" />
-          <End Role="Reagents" Type="WoWModel.WoWDbModel.Reagent" Multiplicity="*" />
+        <Association Name="FK_Reagents_Items">
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="Reagents" Type="Self.Reagent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Items">
               <PropertyRef Name="ItemId" />
@@ -634,21 +679,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Recipes_Items">
-          <End Role="Items" Type="WoWModel.WoWDbModel.Item" Multiplicity="0..1" />
-          <End Role="Recipes" Type="WoWModel.WoWDbModel.Recipe" Multiplicity="*" />
+        <Association Name="FK_Recipes_CraftedItems">
+          <End Role="Items" Type="Self.Item" Multiplicity="0..1" />
+          <End Role="Recipes" Type="Self.Recipe" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Items">
               <PropertyRef Name="ItemId" />
             </Principal>
             <Dependent Role="Recipes">
-              <PropertyRef Name="ItemId" />
+              <PropertyRef Name="CraftedItemId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_recipereagelnts_Recipes">
-          <End Role="Recipes" Type="WoWModel.WoWDbModel.Recipe" Multiplicity="1" />
-          <End Role="Reagents" Type="WoWModel.WoWDbModel.Reagent" Multiplicity="*" />
+        <Association Name="FK_Recipes_RecipeItems">
+          <End Role="Items" Type="Self.Item" Multiplicity="0..1" />
+          <End Role="Recipes" Type="Self.Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="Recipes">
+              <PropertyRef Name="RecipeItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reagents_Recipes">
+          <End Role="Recipes" Type="Self.Recipe" Multiplicity="1" />
+          <End Role="Reagents" Type="Self.Reagent" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Recipes">
               <PropertyRef Name="RecipeId" />
@@ -659,8 +716,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Recipes_Tradeskills">
-          <End Role="Tradeskills" Type="WoWModel.WoWDbModel.Tradeskill" Multiplicity="1" />
-          <End Role="Recipes" Type="WoWModel.WoWDbModel.Recipe" Multiplicity="*" />
+          <End Role="Tradeskills" Type="Self.Tradeskill" Multiplicity="1" />
+          <End Role="Recipes" Type="Self.Recipe" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tradeskills">
               <PropertyRef Name="TradeskillId" />
@@ -671,109 +728,218 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="CharacterCompanions">
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Character" Multiplicity="*" />
-          <End Role="Companions" Type="WoWModel.WoWDbModel.Companion" Multiplicity="*" />
+          <End Role="Characters" Type="Self.Character" Multiplicity="*" />
+          <End Role="Companions" Type="Self.Companion" Multiplicity="*" />
         </Association>
         <Association Name="CharacterRecipes">
-          <End Role="Characters" Type="WoWModel.WoWDbModel.Character" Multiplicity="*" />
-          <End Role="Recipes" Type="WoWModel.WoWDbModel.Recipe" Multiplicity="*" />
+          <End Role="Characters" Type="Self.Character" Multiplicity="*" />
+          <End Role="Recipes" Type="Self.Recipe" Multiplicity="*" />
         </Association>
         <Association Name="CharacterTradeskills">
-          <End Type="WoWModel.WoWDbModel.Character" Role="Character" Multiplicity="*" />
-          <End Type="WoWModel.WoWDbModel.Tradeskill" Role="Tradeskill" Multiplicity="*" />
+          <End Role="Characters" Type="Self.Character" Multiplicity="*" />
+          <End Role="Tradeskills" Type="Self.Tradeskill" Multiplicity="*" />
         </Association>
+        <EntityContainer Name="WoWEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auctions" EntityType="Self.Auction" />
+          <EntitySet Name="Characters" EntityType="Self.Character" />
+          <EntitySet Name="Classes" EntityType="Self.Class" />
+          <EntitySet Name="Companions" EntityType="Self.Companion" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="Races" EntityType="Self.Race" />
+          <EntitySet Name="Realms" EntityType="Self.Realm" />
+          <EntitySet Name="Recipes" EntityType="Self.Recipe" />
+          <EntitySet Name="Tradeskills" EntityType="Self.Tradeskill" />
+          <EntitySet Name="Reagents" EntityType="Self.Reagent" />
+          <AssociationSet Name="FK_Auctions_Items" Association="Self.FK_Auctions_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="Auctions" EntitySet="Auctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auctions_Realms" Association="Self.FK_Auctions_Realms">
+            <End Role="Realms" EntitySet="Realms" />
+            <End Role="Auctions" EntitySet="Auctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Characters_Classes" Association="Self.FK_Characters_Classes">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Characters" EntitySet="Characters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Characters_Races" Association="Self.FK_Characters_Races">
+            <End Role="Races" EntitySet="Races" />
+            <End Role="Characters" EntitySet="Characters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Characters_Realms" Association="Self.FK_Characters_Realms">
+            <End Role="Realms" EntitySet="Realms" />
+            <End Role="Characters" EntitySet="Characters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Companions" Association="Self.FK_Items_Companions">
+            <End Role="Companions" EntitySet="Companions" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reagents_Items" Association="Self.FK_Reagents_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="Reagents" EntitySet="Reagents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recipes_CraftedItems" Association="Self.FK_Recipes_CraftedItems">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="Recipes" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recipes_RecipeItems" Association="Self.FK_Recipes_RecipeItems">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="Recipes" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reagents_Recipes" Association="Self.FK_Reagents_Recipes">
+            <End Role="Recipes" EntitySet="Recipes" />
+            <End Role="Reagents" EntitySet="Reagents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recipes_Tradeskills" Association="Self.FK_Recipes_Tradeskills">
+            <End Role="Tradeskills" EntitySet="Tradeskills" />
+            <End Role="Recipes" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterCompanions" Association="Self.CharacterCompanions">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="Companions" EntitySet="Companions" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterRecipes" Association="Self.CharacterRecipes">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="Recipes" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterTradeskills" Association="Self.CharacterTradeskills">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="Tradeskills" EntitySet="Tradeskills" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WoWModelWoWDbModelStoreContainer" CdmEntityContainer="WoWEntities">
-          <EntitySetMapping Name="Auctions"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Auction"><MappingFragment StoreEntitySet="Auctions">
-            <ScalarProperty Name="RealmId" ColumnName="RealmId" />
-            <ScalarProperty Name="Faction" ColumnName="Faction" />
-            <ScalarProperty Name="AuctionId" ColumnName="AuctionId" />
-            <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-            <ScalarProperty Name="Owner" ColumnName="Owner" />
-            <ScalarProperty Name="Bid" ColumnName="Bid" />
-            <ScalarProperty Name="Buyout" ColumnName="Buyout" />
-            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-            <ScalarProperty Name="TimeLeft" ColumnName="TimeLeft" />
-            <ScalarProperty Name="LastModified" ColumnName="LastModified" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Characters"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Character"><MappingFragment StoreEntitySet="Characters">
-            <ScalarProperty Name="CharacterId" ColumnName="CharacterId" />
-            <ScalarProperty Name="LastModified" ColumnName="LastModified" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="RealmId" ColumnName="RealmId" />
-            <ScalarProperty Name="RaceId" ColumnName="RaceId" />
-            <ScalarProperty Name="ClassId" ColumnName="ClassId" />
-            <ScalarProperty Name="Gender" ColumnName="Gender" />
-            <ScalarProperty Name="Level" ColumnName="Level" />
-            <ScalarProperty Name="AchievementPoints" ColumnName="AchievementPoints" />
-            <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Classes"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Class"><MappingFragment StoreEntitySet="Classes">
-            <ScalarProperty Name="ClassId" ColumnName="ClassId" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="Icon" ColumnName="Icon" />
-            <ScalarProperty Name="R" ColumnName="R" />
-            <ScalarProperty Name="G" ColumnName="G" />
-            <ScalarProperty Name="B" ColumnName="B" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Companions"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Companion"><MappingFragment StoreEntitySet="Companions">
-            <ScalarProperty Name="CompanionId" ColumnName="CompanionId" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Items"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Item"><MappingFragment StoreEntitySet="Items">
-            <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="JSON" ColumnName="JSON" />
-            <ScalarProperty Name="JSON_zhTW" ColumnName="JSON_zhTW" />
-            <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
-            <ScalarProperty Name="CompanionId" ColumnName="CompanionId" />
-            <ScalarProperty Name="ServerwideAverage" ColumnName="ServerwideAverage" />
-            <ScalarProperty Name="Quality" ColumnName="Quality" />
-            <ScalarProperty Name="BindOnPickup" ColumnName="BindOnPickup" />
-            <ScalarProperty Name="SourceId" ColumnName="SourceId" />
-            <ScalarProperty Name="SourceType" ColumnName="SourceType" />
-            <ScalarProperty Name="Icon" ColumnName="Icon" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Races"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Race"><MappingFragment StoreEntitySet="Races">
-            <ScalarProperty Name="RaceId" ColumnName="RaceId" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="Icon" ColumnName="Icon" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Reagents"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Reagent"><MappingFragment StoreEntitySet="Reagents">
-            <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
-            <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Realms"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Realm"><MappingFragment StoreEntitySet="Realms">
-            <ScalarProperty Name="RealmId" ColumnName="RealmId" />
-            <ScalarProperty Name="Type" ColumnName="Type" />
-            <ScalarProperty Name="Population" ColumnName="Population" />
-            <ScalarProperty Name="Queue" ColumnName="Queue" />
-            <ScalarProperty Name="Status" ColumnName="Status" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="Slug" ColumnName="Slug" />
-            <ScalarProperty Name="Battlegroup" ColumnName="Battlegroup" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Recipes"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Recipe"><MappingFragment StoreEntitySet="Recipes">
-            <ScalarProperty Name="CurrentPrice" ColumnName="CurrentPrice" />
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WoWModelStoreContainer" CdmEntityContainer="WoWEntities">
+          <EntitySetMapping Name="Auctions">
+            <EntityTypeMapping TypeName="WoWModel.Auction">
+              <MappingFragment StoreEntitySet="Auctions">
+                <ScalarProperty Name="RealmId" ColumnName="RealmId" />
+                <ScalarProperty Name="Faction" ColumnName="Faction" />
+                <ScalarProperty Name="AuctionId" ColumnName="AuctionId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="Bid" ColumnName="Bid" />
+                <ScalarProperty Name="Buyout" ColumnName="Buyout" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TimeLeft" ColumnName="TimeLeft" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Characters">
+            <EntityTypeMapping TypeName="WoWModel.Character">
+              <MappingFragment StoreEntitySet="Characters">
+                <ScalarProperty Name="CharacterId" ColumnName="CharacterId" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RealmId" ColumnName="RealmId" />
+                <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="AchievementPoints" ColumnName="AchievementPoints" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="WoWModel.Class">
+              <MappingFragment StoreEntitySet="Classes">
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="R" ColumnName="R" />
+                <ScalarProperty Name="G" ColumnName="G" />
+                <ScalarProperty Name="B" ColumnName="B" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companions">
+            <EntityTypeMapping TypeName="WoWModel.Companion">
+              <MappingFragment StoreEntitySet="Companions">
+                <ScalarProperty Name="CompanionId" ColumnName="CompanionId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="WoWModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="JSON" ColumnName="JSON" />
+                <ScalarProperty Name="JSON_zhTW" ColumnName="JSON_zhTW" />
+                <ScalarProperty Name="CompanionId" ColumnName="CompanionId" />
+                <ScalarProperty Name="ServerwideAverage" ColumnName="ServerwideAverage" />
+                <ScalarProperty Name="Quality" ColumnName="Quality" />
+                <ScalarProperty Name="BindOnPickup" ColumnName="BindOnPickup" />
+                <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Races">
+            <EntityTypeMapping TypeName="WoWModel.Race">
+              <MappingFragment StoreEntitySet="Races">
+                <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Realms">
+            <EntityTypeMapping TypeName="WoWModel.Realm">
+              <MappingFragment StoreEntitySet="Realms">
+                <ScalarProperty Name="RealmId" ColumnName="RealmId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Population" ColumnName="Population" />
+                <ScalarProperty Name="Queue" ColumnName="Queue" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="Battlegroup" ColumnName="Battlegroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recipes">
+            <EntityTypeMapping TypeName="WoWModel.Recipe">
+              <MappingFragment StoreEntitySet="Recipes">
                 <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-            <ScalarProperty Name="TradeskillId" ColumnName="TradeskillId" />
-            <ScalarProperty Name="Source" ColumnName="Source" />
-            <ScalarProperty Name="ServerwideAverage" ColumnName="ServerwideAverage" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Tradeskills"><EntityTypeMapping TypeName="WoWModel.WoWDbModel.Tradeskill"><MappingFragment StoreEntitySet="Tradeskills">
-            <ScalarProperty Name="TradeskillId" ColumnName="TradeskillId" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="Primary" ColumnName="Primary" />
-            <ScalarProperty Name="Icon" ColumnName="Icon" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <AssociationSetMapping Name="CharacterCompanions" TypeName="WoWModel.WoWDbModel.CharacterCompanions" StoreEntitySet="CharacterCompanions">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RecipeItemId" ColumnName="RecipeItemId" />
+                <ScalarProperty Name="CraftedItemId" ColumnName="CraftedItemId" />
+                <ScalarProperty Name="TradeskillId" ColumnName="TradeskillId" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="ServerwideAverage" ColumnName="ServerwideAverage" />
+                <ScalarProperty Name="CurrentPrice" ColumnName="CurrentPrice" />
+                <ScalarProperty Name="SkillLevel" ColumnName="SkillLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tradeskills">
+            <EntityTypeMapping TypeName="WoWModel.Tradeskill">
+              <MappingFragment StoreEntitySet="Tradeskills">
+                <ScalarProperty Name="TradeskillId" ColumnName="TradeskillId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Primary" ColumnName="Primary" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reagents">
+            <EntityTypeMapping TypeName="WoWModel.Reagent">
+              <MappingFragment StoreEntitySet="Reagents">
+                <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CharacterCompanions" TypeName="WoWModel.CharacterCompanions" StoreEntitySet="CharacterCompanions">
             <EndProperty Name="Characters">
               <ScalarProperty Name="CharacterId" ColumnName="CharacterId" />
             </EndProperty>
@@ -781,7 +947,7 @@
               <ScalarProperty Name="CompanionId" ColumnName="CompanionId" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="CharacterRecipes" TypeName="WoWModel.WoWDbModel.CharacterRecipes" StoreEntitySet="CharacterRecipes">
+          <AssociationSetMapping Name="CharacterRecipes" TypeName="WoWModel.CharacterRecipes" StoreEntitySet="CharacterRecipes">
             <EndProperty Name="Characters">
               <ScalarProperty Name="CharacterId" ColumnName="CharacterId" />
             </EndProperty>
@@ -789,12 +955,12 @@
               <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="CharacterTradeskills" TypeName="WoWModel.WoWDbModel.CharacterTradeskills" StoreEntitySet="CharacterTradeskills">
-            <EndProperty Name="Tradeskill">
-              <ScalarProperty Name="TradeskillId" ColumnName="TradeskillId" />
-            </EndProperty>
-            <EndProperty Name="Character">
+          <AssociationSetMapping Name="CharacterTradeskills" TypeName="WoWModel.CharacterTradeskills" StoreEntitySet="CharacterTradeskills">
+            <EndProperty Name="Characters">
               <ScalarProperty Name="CharacterId" ColumnName="CharacterId" />
+            </EndProperty>
+            <EndProperty Name="Tradeskills">
+              <ScalarProperty Name="TradeskillId" ColumnName="TradeskillId" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>
@@ -802,7 +968,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -811,104 +977,13 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams>
-      <Diagram Name="WoWModel">
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Auction" Width="1.5" PointX="3" PointY="4.625" Height="3.3263964843749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Character" Width="1.5" PointX="6" PointY="4.375" Height="3.9033007812499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Class" Width="1.5" PointX="3.75" PointY="0.875" Height="2.3648893229166656" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Companion" Width="1.5" PointX="8.25" PointY="5.375" Height="1.7879850260416657" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Item" Width="1.5" PointX="10.5" PointY="4.125" Height="4.2879036458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Race" Width="1.5" PointX="3.75" PointY="9" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Reagent" Width="1.5" PointX="12.75" PointY="5.25" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Realm" Width="1.5" PointX="0.75" PointY="4.875" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Recipe" Width="1.5" PointX="15.75" PointY="4.75" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="WoWModel.WoWDbModel.Tradeskill" Width="1.5" PointX="13.5" PointY="2.25" Height="1.9802864583333317" IsExpanded="true" />
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Auctions_Items" ManuallyRouted="false">
-          <ConnectorPoint PointX="10.5" PointY="8.3768522135416656" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="8.3768522135416656" />
-          <ConnectorPoint PointX="10.166666666666666" PointY="8.3768522135416656" />
-          <ConnectorPoint PointX="3.75" PointY="8.3768522135416656" />
-          <ConnectorPoint PointX="3.75" PointY="7.951396484375" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Auctions_Realms" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="6.3458968098958337" />
-          <ConnectorPoint PointX="3" PointY="6.3458968098958337" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Characters_Classes" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.8203125" PointY="3.2398893229166656" />
-          <ConnectorPoint PointX="4.8203125" PointY="8.2864718063864036" />
-          <ConnectorPoint PointX="6" PointY="8.2864718063864036" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Characters_Races" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.25" PointY="9.8939925130208337" />
-          <ConnectorPoint PointX="6.375" PointY="9.8939925130208337" />
-          <ConnectorPoint PointX="6.375" PointY="8.4706022135416656" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Characters_Realms" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="7.8167936197916674" />
-          <ConnectorPoint PointX="1.5" PointY="8.1189316453807017" />
-          <ConnectorPoint PointX="3.6666666666666665" PointY="8.1189316453807017" />
-          <ConnectorPoint PointX="3.8333333333333335" PointY="8.1189316453807017" />
-          <ConnectorPoint PointX="4.736979166666667" PointY="8.1189316453807017" />
-          <ConnectorPoint PointX="4.903645833333333" PointY="8.1189316453807017" />
-          <ConnectorPoint PointX="6" PointY="8.1189316453807017" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Items_Companions" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="6.2689925130208328" />
-          <ConnectorPoint PointX="10.166666666666666" PointY="6.2689925130208319" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="6.2689925130208328" />
-          <ConnectorPoint PointX="10.5" PointY="6.2689925130208328" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Items_Recipes" ManuallyRouted="false">
-          <ConnectorPoint PointX="15.75" PointY="7.5884407552083317" />
-          <ConnectorPoint PointX="15.458333333333334" PointY="7.5884407552083308" />
-          <ConnectorPoint PointX="15.291666666666666" PointY="7.5884407552083317" />
-          <ConnectorPoint PointX="12" PointY="7.5884407552083317" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_recipereagelnts_Items" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="6.2401432291666659" />
-          <ConnectorPoint PointX="12.75" PointY="6.2401432291666659" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Recipes_Items" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="4.96875" />
-          <ConnectorPoint PointX="15.75" PointY="4.96875" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_recipereagelnts_Recipes" ManuallyRouted="false">
-          <ConnectorPoint PointX="15.75" PointY="6.2401432291666659" />
-          <ConnectorPoint PointX="14.25" PointY="6.2401432291666659" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.FK_Recipes_Tradeskills" ManuallyRouted="false">
-          <ConnectorPoint PointX="15" PointY="3.3362939453125" />
-          <ConnectorPoint PointX="16.5" PointY="3.3362939453125" />
-          <ConnectorPoint PointX="16.5" PointY="4.75" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.CharacterCompanions" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="6.2689925130208328" />
-          <ConnectorPoint PointX="8.25" PointY="6.2689925130208328" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.CharacterRecipes" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="4.375" />
-          <ConnectorPoint PointX="6.75" PointY="4.125" />
-          <ConnectorPoint PointX="7.0729191666666669" PointY="4.1249999999999991" />
-          <ConnectorPoint PointX="7.2395858333333329" PointY="4.125" />
-          <ConnectorPoint PointX="10.25" PointY="4.125" />
-          <ConnectorPoint PointX="10.25" PointY="8.6629036458333317" />
-          <ConnectorPoint PointX="15.375" PointY="8.6629036458333317" />
-          <ConnectorPoint PointX="15.375" PointY="6.9142919921874988" />
-          <ConnectorPoint PointX="15.75" PointY="6.9142919921874988" />
-        </AssociationConnector>
-        <AssociationConnector Association="WoWModel.WoWDbModel.CharacterTradeskills" >
-          <ConnectorPoint PointX="7.1562525" PointY="4.375" />
-          <ConnectorPoint PointX="7.1562525" PointY="3.15625" />
-          <ConnectorPoint PointX="13.5" PointY="3.15625" />
-        </AssociationConnector>
-      </Diagram>
-    </Diagrams>
+    <Diagrams></Diagrams>
   </Designer>
 </edmx:Edmx>

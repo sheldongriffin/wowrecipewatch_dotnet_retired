@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WoWModel</RootNamespace>
     <AssemblyName>WoWModel</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,16 +31,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -47,16 +54,70 @@
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <EntityDeploy Include="WoWModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WoWModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="WoWModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WoWModel.edmx</DependentUpon>
+      <LastGenOutput>WoWModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="WoWModel.edmx.diagram">
+      <DependentUpon>WoWModel.edmx</DependentUpon>
+    </None>
+    <None Include="WoWModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WoWModel.edmx</DependentUpon>
+      <LastGenOutput>WoWModel.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auction.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Character.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Companion.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="GoldObject.cs" />
+    <Compile Include="Item.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Race.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reagent.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Realm.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recipe.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tradeskill.cs">
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WoWModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoWModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WoWModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoWModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="WoWModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

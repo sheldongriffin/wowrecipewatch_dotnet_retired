@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c2b7df0ba9014366a3cf1b06cd2eb3bb" Name="Diagram1">
+        <EntityTypeShape EntityType="WoWModel.Auction" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Character" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Class" Width="1.5" PointX="3.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Companion" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Item" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Race" Width="1.5" PointX="3.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Realm" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Recipe" Width="1.5" PointX="12.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Tradeskill" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WoWModel.Reagent" Width="1.5" PointX="15" PointY="6.375" IsExpanded="true" />
+        <AssociationConnector Association="WoWModel.FK_Auctions_Items" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Auctions_Realms" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Characters_Classes" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Characters_Races" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Characters_Realms" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Items_Companions" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Reagents_Items" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Recipes_CraftedItems" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Recipes_RecipeItems" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Reagents_Recipes" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.FK_Recipes_Tradeskills" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.CharacterCompanions" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.CharacterRecipes" ManuallyRouted="false" />
+        <AssociationConnector Association="WoWModel.CharacterTradeskills" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
