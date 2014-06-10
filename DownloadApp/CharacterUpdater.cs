@@ -30,7 +30,7 @@ namespace DownloadApp
                 if (dbcharacter == null)
                 {
                     dbcharacter = new WoWModel.Character();
-                    db.Characters.AddObject(new WoWModel.Character { 
+                    db.Characters.Add(new WoWModel.Character { 
                         Name = character.Name, 
                         AchievementPoints = character.AchievementPoints, 
                         ClassId = character.ClassId, 

@@ -61,7 +61,7 @@ namespace DownloadApp
 
                         if (!db.Companions.Any(a => a.CompanionId == spellId))
                         {
-                            db.Companions.AddObject(new Companion { CompanionId = spellId, Name = name });
+                            db.Companions.Add(new Companion { CompanionId = spellId, Name = name });
                             db.SaveChanges();
                         }
                         else
@@ -70,7 +70,7 @@ namespace DownloadApp
                             db.SaveChanges();
                         }
 
-                        db.Items.Single(a => a.ItemId == itemId).CompanionTaught = db.Companions.Single(a => a.CompanionId == spellId);
+                        //db.Items.Single(a => a.ItemId == itemId).CompanionTaught = db.Companions.Single(a => a.CompanionId == spellId);
                         db.SaveChanges();
                     }
                 }
